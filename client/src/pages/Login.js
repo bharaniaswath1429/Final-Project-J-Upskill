@@ -12,6 +12,10 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  useEffect(() => {
+    localStorage.removeItem('authToken');
+  }, []);
+
   const token = localStorage.getItem('authToken');
   let user = null;
 
